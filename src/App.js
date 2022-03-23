@@ -2,9 +2,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Products from "./components/Products/Products";
+import { useState } from "react";
 
 function App() {
-  let myProductList = [
+  const [productList, setProductList] = useState([
     {
       id: 1,
       title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -211,12 +212,12 @@ function App() {
       image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       rating: { rate: 3.6, count: 145 },
     },
-  ];
+  ]);
 
   return (
     <div className="App">
       <Header />
-      <Products ProductList={myProductList} />
+      <Products productList={productList} setProductList={setProductList} />
     </div>
   );
 }
