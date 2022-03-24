@@ -1,29 +1,28 @@
 import Product from "../Product/Product";
 import "./Products.css";
-
-let newProductName = "";
-let newProductPrice = "";
-let newProductDescription = "";
-function Products({ productList, setProductList }) {
+function Products({ filteredList, productList, setProductList }) {
+  let newProductName = "";
+  let newProductPrice = "";
+  let newProductDescription = "";
   return (
-    <div className="ProductList">
+    <section className="ProductList">
       <input
         type="text"
-        abel="Product name"
+        placeholder="Product name"
         onChange={(e) => {
           newProductName = e.target.value;
         }}
       />
       <input
         type="text"
-        aria-label="Product name"
+        placeholder="Product name"
         onChange={(e) => {
           newProductPrice = e.target.value;
         }}
       />
       <input
         type="text"
-        aria-label="Product name"
+        placeholder="Product name"
         onChange={(e) => {
           newProductDescription = e.target.value;
         }}
@@ -46,11 +45,22 @@ function Products({ productList, setProductList }) {
       >
         Add new product
       </button>
-      {productList.map(({ id, image, price, title }) => (
-        <Product key={id} imgSrc={image} price={price} title={title} />
-      ))}
+      {filteredList.map(
+        ({ id, image, title, price, description, category, rating }) => (
+          <Product
+            key={id}
+            id={id}
+            imgSrc={image}
+            price={price}
+            title={title}
+            description={description}
+            category={category}
+            rating={rating}
+          />
+        ),
+      )}
       ;
-    </div>
+    </section>
   );
 }
 

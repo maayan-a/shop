@@ -1,6 +1,6 @@
 //import "./Header.css";
 
-function Header() {
+function Header({ categories }) {
   return (
     <div>
       <div className="header-title">
@@ -14,14 +14,10 @@ function Header() {
           <div className="collection-sort">
             <label>Filter by:</label>
             <select>
-              <option value="all">All Jackets</option>
-              <option value="2016">2016</option>
-              <option value="all">Jacket</option>
-              <option value="all">Jackets</option>
-              <option value="all">Layers</option>
-              <option value="all">Obermeyer</option>
-              <option value="all">Roxy</option>
-              <option value="all">Women</option>
+              <option key={"All products"}>All products</option>
+              {categories.map((category) => (
+                <option key={category}>{category}</option>
+              ))}
             </select>
           </div>
 
