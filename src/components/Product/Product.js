@@ -1,7 +1,6 @@
 import "./Product.css";
 
 function Product({ id, title, price, description, category, imgSrc, rating }) {
-  debugger;
   return (
     <div key={id} className="Product-card">
       <div className="Product-image">
@@ -12,7 +11,6 @@ function Product({ id, title, price, description, category, imgSrc, rating }) {
         <h5>price: {price} $</h5>
         <h5>description: {description}</h5>
         <h5>category: {category}</h5>
-        <h5>rating: {rating}</h5>
       </div>
     </div>
   );

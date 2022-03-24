@@ -1,6 +1,8 @@
 //import "./Header.css";
+import AddProduct from "../AddProduct/AddProduct";
+import ToggleButton from "../ToggleButton";
 
-function Header({ categories }) {
+function Header({ categories, onFilter, productList, setProductList }) {
   return (
     <div>
       <div className="header-title">
@@ -11,29 +13,22 @@ function Header({ categories }) {
         <h1>Jackets</h1>
 
         <div className="sort">
-          <div className="collection-sort">
-            <label>Filter by:</label>
-            <select>
-              <option key={"All products"}>All products</option>
-              {categories.map((category) => (
-                <option key={category}>{category}</option>
-              ))}
-            </select>
-          </div>
+          <label>Filter by:</label>
+          <select onChange={(e) => onFilter(e.target.value)}>
+            <option key={"All products"}>All products</option>
+            {categories.map((category) => (
+              <option key={category}>{category}</option>
+            ))}
+          </select>
 
-          {/* <div className="collection-sort">
-            <label>Sort by:</label>
-            <select>
-              <option value="all">All Jackets</option>
-              <option value="2016">2016</option>
-              <option value="all">Jacket</option>
-              <option value="all">Jackets</option>
-              <option value="all">Layers</option>
-              <option value="all">Obermeyer</option>
-              <option value="all">Roxy</option>
-              <option value="all">Women</option>
-            </select>
-          </div> */}
+          <br />
+
+          <div>
+            {/* <AddProduct
+              productList={productList}
+              setProductList={setProductList}
+            /> */}
+          </div>
         </div>
       </div>
     </div>

@@ -28,11 +28,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header categories={categories} onFilter={filterByCategory} />
-      <Products
-        filteredList={filteredList}
+      <Header
+        categories={categories}
+        onFilter={filterByCategory}
         productList={productList}
         setProductList={setProductList}
+      />
+      <Products
+        filteredList={filteredList}
+        // productList={productList}
+        // setProductList={setProductList}
       />
     </div>
   );

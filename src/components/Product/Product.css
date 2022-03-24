@@ -1,0 +1,15 @@
+img {
+  width: 430px;
+  height: 430px;
+}
+
+.Product-info {
+  width: 430px;
+}
+
+.Product-card {
+  width: 430px;
+  border: 2px solid #000;
+  display: inline-block;
+  margin: 10px;
+}
